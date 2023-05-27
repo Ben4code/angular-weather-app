@@ -2,23 +2,30 @@
 :root {
   --gray-darker: #333;
   --gray-dark: #777;
-  --gray-light: #ccc;
+  --gray-light: #ddd;
+  --gray: #aaa;
   --indigo: rgb(41, 59, 255);
   --blue: rgb(36, 193, 255);
   --shadow-light: rgba(255, 255, 255, 0.1);
   --shadow-container: rgba(0, 0, 0, 0.3);
+  --container-bg: #C5CDF8;
+  --container-bg-dark: #b1bcfc;
+  --bottom-divider: rgba(255,255,255, 0.3) solid 0.2rem;
+  --border-radius: 2rem;
 }
 
 *,
-*::after
+*::after,
 *::before{
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62%;
+  font-size: 62.5%;
 }
 
 body {
@@ -28,15 +35,14 @@ body {
   width: 100%;
   height: 100vh;
   background: rgb(2,0,36);
-  background: linear-gradient(45deg, var(--gray-darker) 0%, var(--gray-dark) 55%, var(--gray-light) 100%);
+  background: linear-gradient(45deg, var(--container-bg) 0%, var(--container-bg-dark) 55%, var(--gray) 100%);
   color: #fff;
 }
 .container{
   margin: 3rem auto;
   width: 90rem;
   height: 80vh;
-  padding: 5rem;
-  border-radius: 2rem;
+  border-radius: var(--border-radius);
   background: rgb(2,0,36);
   box-shadow: 1rem 1rem 1rem var(--shadow-container);
   background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -45,4 +51,174 @@ body {
 
 h1 {
   font-size: 4.8rem;
+}
+li{
+  list-style: none;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.home__upper{
+  border-bottom: var(--bottom-divider);
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__upper-left{
+  position: relative;
+  filter: blur(.2rem);
+  opacity: .8;
+  border-radius: 2rem 0 0 0;
+  background-image: url('assets/day-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover; 
+  height: 100%;
+  width: 100%;
+}
+.home__upper-content{
+  background: rgba(0, 0, 0, 0.2);
+  padding: 3rem 5rem;
+  border-radius: var(--border-radius);
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.home__upper-right{
+  height: 100%;
+  width: 100%;
+}
+
+.home__form{
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 5rem;
+  width: 100%;
+}
+
+.home__form input{
+  padding: 1.5rem 2rem;
+  font-size: 1.6rem;
+  width: 35rem;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+  border: none;
+  outline: none;
+}
+
+.home__upper-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home__upper-list li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.home__upper-list li img{
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+  margin-right: .5rem;
+}
+
+.home__city{
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 0rem;
+}
+.home__date{
+  font-size: 1.6rem;
+  font-weight: 100;
+  color: var(--gray-light);
+  margin-top: 0;
+}
+.home__temp{
+  font-size: 6rem;
+  font-weight: 100;
+  margin-top: 0;
+}
+
+.home__lower{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.home__panel-list{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home__lower-panel{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+  padding: 2rem 1rem;
+  width: 15rem;
+  text-align: center;
+}
+
+.home__lower-day{
+  font-weight: 600;
+}
+.home__lower-date{
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 100;
+  color: var(--gray-light);
+  margin-top: 0;
+}
+.home__lower-icon{
+  margin: 1rem 0;
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+}
+
+.home__lower-footer{
+  display: flex;
+  font-weight: 100;
+}
+
+.home__lower-left{
+  width: 50%;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.home__lower-left span{
+  display: block;
+  margin-right: -1.5rem;
+}
+
+.home__lower-right span{
+  display: block;
+  margin-left: -1.5rem;
+}
+.home__lower-right > span:first-of-type,
+.home__lower-left > span:first-of-type{
+  font-weight: 400;
+}
+
+.home__lower-right{
+  width: 50%;
 }
