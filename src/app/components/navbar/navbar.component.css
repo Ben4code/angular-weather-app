@@ -1,0 +1,22 @@
+.navbar{
+  width: 90rem;
+  height: 7vh;
+  margin: 2rem auto;
+}
+
+.navbar-content,
+.navbar-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-item{
+  line-height: 5rem;
+  margin-left: 3rem;
+}
+
+.navbar-link-item{
+  display: flex;
+  align-items: center;
+}

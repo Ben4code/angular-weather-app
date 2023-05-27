@@ -33,7 +33,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.6rem;/* 16px */
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   background: rgb(2,0,36);
   background: linear-gradient(45deg, var(--container-bg) 0%, var(--container-bg-dark) 55%, var(--gray) 100%);
   color: #fff;
@@ -58,6 +58,13 @@ ul{
   margin: 0;
   padding: 0;
 }
+a:link,
+a:visited{
+  color: #336eae;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
 
 .home{
   display: flex;
@@ -71,13 +78,12 @@ ul{
   border-bottom: var(--bottom-divider);
   height: 100%;
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .home__upper-left{
-  position: relative;
   filter: blur(.2rem);
   opacity: .8;
   border-radius: 2rem 0 0 0;
@@ -86,21 +92,22 @@ ul{
   background-position: left;
   background-size: cover; 
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 .home__upper-content{
   background: rgba(0, 0, 0, 0.2);
   padding: 3rem 5rem;
   border-radius: var(--border-radius);
   position: absolute;
-  left: 35%;
-  top: 25%;
+  display: inline-block;
+  left: 25%;
+  top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 .home__upper-right{
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 .home__form{
