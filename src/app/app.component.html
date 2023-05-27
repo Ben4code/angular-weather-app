@@ -1,5 +1,12 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <router-outlet></router-outlet>
+
+<div class="loading" *ngIf="!weatherData; else elseBlock">
+  <h1>Loading...</h1>
 </div>
+
+<ng-template #elseBlock>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
 
