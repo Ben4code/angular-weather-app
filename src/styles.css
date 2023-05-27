@@ -41,12 +41,11 @@ body {
 .container{
   margin: 3rem auto;
   width: 90rem;
-  height: 80vh;
+  height: 90vh;
   border-radius: var(--border-radius);
   background: rgb(2,0,36);
   box-shadow: 1rem 1rem 1rem var(--shadow-container);
   background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-
 }
 
 h1 {

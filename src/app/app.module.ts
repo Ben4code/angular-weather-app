@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
     WeatherDetailComponent,
     HomeComponent,
     SearchComponent,
+    WeatherChartComponent,
   ],
   imports: [
     BrowserModule,

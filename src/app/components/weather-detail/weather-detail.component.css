@@ -1,0 +1,28 @@
+
+.weather__detail-lower{
+  height: 100%;
+  width: 100%;
+}
+.weather__detail-chart{
+  background: white;
+  padding: 1rem;
+  color: #333;
+  border-radius: 0 2rem 0 0;
+  height: 100%;
+}
+.weather__detail-list{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.weather__detail-list li{
+  place-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather__detail-list li img{
+  filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.5));
+  margin-right: .5rem;
+}
