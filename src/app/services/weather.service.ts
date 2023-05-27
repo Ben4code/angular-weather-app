@@ -21,4 +21,14 @@ export class WeatherService {
         .set('days', 3),
     })
   }
+  getCity(city: string): Observable<RootWeatherData>{
+    return this.http.get<RootWeatherData>(environment.WEATHER_API_BASE_URL, {
+      headers: new HttpHeaders()
+        .set(environment.X_RAPIDAPI_HOST_LABEL, environment.X_RAPIDAPI_HOST_VALUE)
+        .set(environment.X_RAPIDAPI_KEY_LABEL, environment.X_RAPIDAPI_KEY_VALUE),
+      params: new HttpParams()
+        .set('q', city)
+        .set('days', 3),
+    })
+  }
 }
