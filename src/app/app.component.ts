@@ -10,13 +10,13 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class AppComponent implements OnInit {
   title = 'angularweather';
   constructor(private weatherService: WeatherService){}
-  weatherData?: RootWeatherData;
+  weatherData!: RootWeatherData;
+  
   
   ngOnInit(){
     this.weatherService.getWeather('Toronto')
       .subscribe({
         next: (response) => {
-          console.log(response)
           this.weatherData = response
         }
       })

@@ -1,11 +1,13 @@
-<div class="home">
+<div class="home" *ngIf="weatherData">
   <div class="home__upper">
     <div class="home__upper-left">
     </div>
       <div class="home__upper-content">
-        <h3 class="home__city">Toronto</h3>
-        <h4 class="home__date">Sunday, 10 June</h4>
-        <h1 class="home__temp">18&deg;C </h1>
+        <h3 class="home__city">{{ weatherData.location.name }}</h3>
+        <h4 class="home__date">{{ weatherData.location.localtime | date : 'EEEE, MMMM d, y'}}</h4>
+        <h1 class="home__temp">{{ weatherData.current.temp_c }}&deg;C </h1>
+        <img class="home__lower-icon" [src]="'https:' + weatherData.current.condition.icon" alt="weather icon" width="60"/> 
+        <p>{{ weatherData.current.condition.text }}</p>
       </div>
     <div class="home__upper-right">
       <form class="home__form">
@@ -14,25 +16,25 @@
       <ul class="home__upper-list">
         <li>
           <img src="assets/drop.svg" width="40" alt="Humidity" /> 
-          <span>Humidity: 100</span>
+          <span>Humidity: {{ weatherData.current.humidity }}</span>
         </li>
         <li>
           <img src="assets/sun.svg" width="40" alt="Humidity" /> 
-          <span>Precipitation: 20</span></li>
+          <span>Wind Direction: {{ weatherData.current.wind_dir }}</span></li>
         <li>
           <img src="assets/thermometer.svg" width="40" alt="Humidity" /> 
-          <span>Wind: 40%</span></li>
+          <span>Wind Speed: {{ weatherData.current.wind_kph }}km/h</span></li>
         <li>
           <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-          <span>Pressure: 34%</span>
+          <span>Pressure: {{ weatherData.current.pressure_mb }}</span>
         </li>
         <li>
           <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-          <span>Visibility: 34%</span>
+          <span>Visibility: {{ weatherData.current.vis_km }}</span>
         </li>
         <li>
           <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-          <span>UV Index: 34%</span>
+          <span>UV Index: {{ weatherData.current.uv }}</span>
         </li>
       </ul>
     </div>
@@ -40,86 +42,25 @@
 
   <div class="home__lower">
     <ul class="home__panel-list">
-      <li class="home__lower-panel">
-        <span class="home__lower-day">Monday</span>
-        <span class="home__lower-date">10 June</span>
-        <img class="home__lower-icon" src="assets/forcast/cloud-lightning-rain.svg" alt="weather icon" width="50"/>     
+      <li 
+        class="home__lower-panel" 
+        *ngFor="let forcast of forecasts; let index=index" 
+        [routerLink]="['/detail', currentCity, index]"
+      >
+        <span class="home__lower-day">{{ forcast.date | date : 'EEEE'}}</span>
+        <span class="home__lower-date">{{ forcast.date | date : 'MMMM d, y'}}</span>
+        <img class="home__lower-icon" [src]="'https:' + forcast.day.condition.icon" alt="weather icon" width="50"/>     
         <span class="home__lower-footer">
           <span class="home__lower-left">
             <span>min</span>
-            <span>13&deg;C</span>
+            <span>{{ forcast.day.mintemp_c}}&deg;C</span>
           </span>
           <span class="home__lower-right">
             <span>max</span>
-            <span>23&deg;C</span>
+            <span>{{ forcast.day.maxtemp_c}}&deg;C</span>
           </span>
         </span>
       </li>
-      
-      <li class="home__lower-panel">
-        <span class="home__lower-day">Tuesday</span>
-        <span class="home__lower-date">11 June</span>
-        <img class="home__lower-icon" src="assets/forcast/cloud-drizzle.svg" alt="weather icon" width="50"/>
-        <span class="home__lower-footer">
-          <span class="home__lower-left">
-            <span>min</span>
-            <span>13&deg;C</span>
-          </span>
-          <span class="home__lower-right">
-            <span>max</span>
-            <span>23&deg;C</span>
-          </span>
-        </span>
-      </li>
-      
-      <li class="home__lower-panel">
-        <span class="home__lower-day">Wednesday</span>
-        <span class="home__lower-date">12 June</span>
-        <img class="home__lower-icon" src="assets/forcast/sunny-cloudy.svg" alt="weather icon" width="50"/>
-        <span class="home__lower-footer">
-          <span class="home__lower-left">
-            <span>min</span>
-            <span>13&deg;C</span>
-          </span>
-          <span class="home__lower-right">
-            <span>max</span>
-            <span>23&deg;C</span>
-          </span>
-        </span>
-      </li>
-      
-      <li class="home__lower-panel">
-        <span class="home__lower-day">Thursday</span>
-        <span class="home__lower-date">13 June</span>
-        <img class="home__lower-icon" src="assets/forcast/flash-lightning.svg" alt="weather icon" width="50"/>
-        <span class="home__lower-footer">
-          <span class="home__lower-left">
-            <span>min</span>
-            <span>13&deg;C</span>
-          </span>
-          <span class="home__lower-right">
-            <span>max</span>
-            <span>23&deg;C</span>
-          </span>
-        </span>
-      </li>
-      
-      <li class="home__lower-panel">
-        <span class="home__lower-day">Friday</span>
-        <span class="home__lower-date">14 June</span>
-        <img class="home__lower-icon" src="assets/forcast/thermometer-sun.svg" alt="weather icon" width="50"/>
-        <span class="home__lower-footer">
-          <span class="home__lower-left">
-            <span>min</span>
-            <span>13&deg;C</span>
-          </span>
-          <span class="home__lower-right">
-            <span>max</span>
-            <span>23&deg;C</span>
-          </span>
-        </span>
-      </li>
-      
     </ul>
   </div>
 </div>

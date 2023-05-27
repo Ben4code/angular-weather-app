@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js/'
+import { Hour } from 'src/app/models/weather-service.model';
 
 Chart.register(...registerables)
 
@@ -9,6 +10,7 @@ Chart.register(...registerables)
   styleUrls: ['./weather-chart.component.css']
 })
 export class WeatherChartComponent implements OnInit{
+  @Input() hourlyWeather: Array<Hour> = [];
   constructor(){}
   
   ngOnInit(): void {
@@ -19,12 +21,24 @@ export class WeatherChartComponent implements OnInit{
     const chart = new Chart("piechart", {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
+        labels: this.getHourlyTimeLabel(),
+        datasets: [
+          {
+            label: 'Temperature(°C)',
+            data: this.getHourlyTempValues(),
+            borderWidth: 1
+          },
+          {
+            label: 'Wind(Kmph)',
+            data: this.getHourlyWindValues(),
+            borderWidth: 1
+          },
+          {
+            label: 'Humidity',
+            data: this.getHourlyHumidityValues(),
+            borderWidth: 1
+          },
+      ]
       },
       options: {
         scales: {
@@ -35,5 +49,22 @@ export class WeatherChartComponent implements OnInit{
       }
     });
     return chart
+  }
+
+  getHourlyTimeLabel(){
+    const houlyLabels = this.hourlyWeather.map(weather => weather.time.split(' ')[1])
+    return houlyLabels;
+  }
+  getHourlyTempValues(){
+    const houlyTempValues = this.hourlyWeather.map(weather => weather.temp_c)
+    return houlyTempValues;
+  }
+  getHourlyWindValues(){
+    const houlyWindValues = this.hourlyWeather.map(weather => weather.wind_kph)
+    return houlyWindValues;
+  }
+  getHourlyHumidityValues(){
+    const houlyHumidityValues = this.hourlyWeather.map(weather => weather.humidity)
+    return houlyHumidityValues;
   }
 }

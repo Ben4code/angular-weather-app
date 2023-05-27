@@ -1,15 +1,18 @@
-<div class="home">
+<div class="home" *ngIf="forecast">
   <div class="home__upper">
     <div class="home__upper-left">
     </div>
     <div class="home__upper-content">
-      <h3 class="home__city">Toronto</h3>
-      <h4 class="home__date">Sunday, 10 June</h4>
-      <h1 class="home__temp">18&deg;C </h1>
+      <h3 class="home__city">{{ city }}</h3>
+      <h4 class="home__date">{{ forecast.date | date : 'EEEE, MMMM d, y'}}</h4>
+      <h1 class="home__temp">{{ forecast.day.avgtemp_c }}&deg;C </h1>
+      <img class="home__lower-icon" [src]="'https:' + forecast.day.condition.icon" alt="weather icon" width="60" />
+      <p>{{ forecast.day.condition.text }}</p>
     </div>
+
     <div class="home__upper-right">
       <div class="weather__detail-chart">
-        <app-weather-chart></app-weather-chart>
+        <app-weather-chart [hourlyWeather]="hourlyForecast"></app-weather-chart>
       </div>
     </div>
   </div>
@@ -17,62 +20,41 @@
   <div class="weather__detail-lower">
     <ul class="weather__detail-list">
       <li>
-        <img src="assets/drop.svg" width="40" alt="Humidity" /> 
-        <span>Humidity: 100</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span> Humidity: {{ forecast.day.avghumidity }}</span>
       </li>
       <li>
-        <img src="assets/sun.svg" width="40" alt="Humidity" /> 
-        <span>Precipitation: 20</span></li>
-      <li>
-        <img src="assets/thermometer.svg" width="40" alt="Humidity" /> 
-        <span>Wind: 40%</span></li>
-      <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Pressure: 34%</span>
+        <img src="assets/sun.svg" width="40" alt="Humidity" />
+        <span>Precipitation: {{ forecast.day.totalprecip_mm }}mm</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Visibility: 34%</span>
+        <img src="assets/thermometer.svg" width="40" alt="Humidity" />
+        <span>Max Wind: {{ forecast.day.maxwind_mph }}kmph</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>UV Index: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>Visibility: {{ forecast.day.avgvis_km }}km</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Pressure: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>UV Index: {{ forecast.day.uv }}</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Visibility: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>Total Snow: {{ forecast.day.totalsnow_cm }}cm</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>UV Index: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>Min Temp: {{ forecast.day.mintemp_c }}&deg;C</span>
       </li>
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Pressure: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>Max Temp: {{ forecast.day.maxtemp_c }}&deg;C</span>
       </li>
+
       <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Visibility: 34%</span>
-      </li>
-      <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>UV Index: 34%</span>
-      </li>
-      <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Pressure: 34%</span>
-      </li>
-      <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>Visibility: 34%</span>
-      </li>
-      <li>
-        <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-        <span>UV Index: 34%</span>
+        <img src="assets/wind.svg" width="40" alt="Humidity" />
+        <span>Max Wind: {{ forecast.day.maxwind_kph }}kmph</span>
       </li>
     </ul>
   </div>
