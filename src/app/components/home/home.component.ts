@@ -12,12 +12,12 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class HomeComponent implements OnInit{
   weatherData!: RootWeatherData;
   forecasts: Array<Forecastday> = []
-  currentCity: string | undefined
+  currentCity = this.weatherService.getSavedCity('city')
   
   constructor(private weatherService: WeatherService){}
   
   ngOnInit(){
-    this.weatherService.getWeather('Toronto')
+    this.weatherService.getWeather(this.currentCity)
       .subscribe({
         next: (response) => {
           this.currentCity = response.location.name
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit{
           this.currentCity = response.location.name
           this.weatherData = response
           this.forecasts = [...response.forecast.forecastday]
+          this.weatherService.saveCity('city', this.currentCity)
         }
       })
   }

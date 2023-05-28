@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class WeatherService {
-
+  weatherData: RootWeatherData | undefined;
   constructor(private http: HttpClient) { }
 
   getWeather(city: string): Observable<RootWeatherData>{
@@ -30,5 +30,17 @@ export class WeatherService {
       params: new HttpParams()
         .set('q', city)
     })
+  }
+
+  getSavedCity(key: string){
+    const save = localStorage.getItem(key)
+    if(!save){
+      return 'Toronto'
+    }
+    return save
+  }
+
+  saveCity(key: string, value: string){
+    localStorage.setItem(key, value)
   }
 }

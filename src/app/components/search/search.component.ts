@@ -46,6 +46,7 @@ export class SearchComponent implements OnInit {
     this.selectedCityEvent.emit(city)
     this.textInputField = ''
     this.cities = []
+    this.weatherService.saveCity('city', city)
   }
 
   handleFocus(){
