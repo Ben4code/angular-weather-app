@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ClickedOutsideDirective } from './directives/clicked-outside.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchComponent,
     WeatherChartComponent,
     NavbarComponent,
+    ClickedOutsideDirective,
   ],
   imports: [
     BrowserModule,

@@ -26,4 +26,15 @@ export class HomeComponent implements OnInit{
         }
       })
   }
+
+  getCityEventHandler(cityEvent: string){
+    this.weatherService.getWeather(cityEvent)
+      .subscribe({
+        next: (response) => {
+          this.currentCity = response.location.name
+          this.weatherData = response
+          this.forecasts = [...response.forecast.forecastday]
+        }
+      })
+  }
 }

@@ -7,5 +7,6 @@ export const environment = {
   X_RAPIDAPI_HOST_LABEL: '',
   X_RAPIDAPI_HOST_VALUE: '',
   X_RAPIDAPI_KEY_LABEL: '',
-  X_RAPIDAPI_KEY_VALUE: ''
+  X_RAPIDAPI_KEY_VALUE: '',
+  WEATHER_API_CITY_SEARCH_URL: ''
 }

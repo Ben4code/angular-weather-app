@@ -30,7 +30,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   font-size: 1.6rem;/* 16px */
   width: 100%;
   min-height: 100vh;
@@ -130,6 +130,51 @@ a:visited{
   filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
   border: none;
   outline: none;
+  z-index: 2;
+}
+.home__search-result{
+  position: absolute;
+  top: 7rem;
+  right: 5rem;
+  z-index: 1;
+  background: #fff;
+  padding: 3rem 2rem 1.5rem;
+  width: 35rem;
+  height: 15rem;
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+  margin: -2rem auto 1rem;
+  border-radius: 0 0 2rem 2rem;
+  overflow-y: scroll;
+  animation: dropDown .3s ease;
+}
+
+.home__search-result li{
+  font-size: 1.6rem;
+  color: var(--gray-dark);
+  line-height: 2.5rem;
+  cursor: pointer;
+}
+.home__search-result li:not(:last-of-type){
+  border-bottom: solid rgba(0, 0, 0, 0.2) .1rem; 
+}
+.home__button{
+  padding: 1.5rem 2rem;
+  font-size: 1.6rem;
+  width: 15rem;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 2rem auto 1rem;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: var(--indigo);
+  transition: all .3s ease;
+}
+.home__button:hover{
+  filter: drop-shadow(2rem 2rem 2rem var(--shadow-container));
 }
 
 .home__upper-list{
@@ -159,7 +204,7 @@ a:visited{
 }
 .home__date{
   font-size: 1.6rem;
-  font-weight: 100;
+  font-weight: 400;
   color: var(--gray-light);
   margin-top: 0;
 }
@@ -190,6 +235,13 @@ a:visited{
   padding: 2rem 1rem;
   width: 15rem;
   text-align: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.home__lower-panel:hover{
+  background: rgba(255, 255, 255, 0.25);
+  filter: drop-shadow(2rem 2rem 2rem var(--shadow-container));
 }
 
 .home__lower-day{
@@ -203,7 +255,6 @@ a:visited{
   margin-top: 0;
 }
 .home__lower-icon{
-  margin: 1rem 0;
   filter: drop-shadow(1rem 1rem 1rem var(--shadow-container));
 }
 
@@ -218,12 +269,12 @@ a:visited{
 }
 .home__lower-left span{
   display: block;
-  margin-right: -1.5rem;
+  margin-right: -1rem;
 }
 
 .home__lower-right span{
   display: block;
-  margin-left: -1.5rem;
+  margin-left: -1rem;
 }
 .home__lower-right > span:first-of-type,
 .home__lower-left > span:first-of-type{
@@ -232,4 +283,17 @@ a:visited{
 
 .home__lower-right{
   width: 50%;
+}
+
+
+@keyframes dropDown {
+  0%{ 
+    height: 0;
+  }
+  50%{ 
+    height: 7.5rem;
+  }
+  100%{ 
+    height: 15rem;
+  }
 }
