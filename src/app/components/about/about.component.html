@@ -1,0 +1,90 @@
+<div class="about">
+  <h1>PocketWeather</h1> 
+  <h5>A Mini <a href="https://pocketweather.vercel.app">Weather App</a> project built with <a href="https://angular.io">Angular 16</a> and <a href="https://www.weatherapi.com/">Weather API</a></h5>
+
+
+<h3>Table of contents</h3>
+<ul>
+  <li id="#overview"><a href=""></a> Overview</li>
+  <li id="#features">Features</li>
+  <li id="#getting-started">Getting Started</li>
+  <li id="#acknowledgments">Acknowledgments</li>
+  <li id="#further-help">Further Help</li>
+</ul>
+
+
+<h3 id="#overview">Overview</h3> 
+<p>
+  This project was developed to help you get weather updates from different cities. All weather data displayed are reliable and sourced from the Weather API.  PocketWeather also gives you accurate weather forecasts to enable you plan your week outdoors with ease. 
+</p>
+  
+
+<h3 id="#features">Features</h3>
+<p>
+  This project comes with all the standard Angular 16 dependencies out of the box. It is a monolith application currently <a href="pocketweather.vercel.app">deployed</a> and hosted on <a href="https://Vercel.com/">Vercel</a>. It was also developed from scratch using modern web application best practices like:
+</p>
+<ul>
+  <ol>1. Debouncing of high traffic search API calls. </ol>
+  <ol>2. Loading state to ensure app initialises correctly.</ol>
+  <ol>3. Persistence of last searched city on Local Storage in-browser application memory.</ol>
+  <ol>4. High unit test coverage to ensure application is easily maintained and works as intended leveraging on <a href="https://jasmine.github.io/">Jasmine</a> and <a href="https://karma-runner.github.io/latest/index.html">Karma</a> test runner.
+  </ol>
+</ul>
+
+<h3 id="#getting-started">Getting Started</h3>
+<p>
+  Ensure you have <a href="https://nodejs.org/">Nodejs</a> installed locally or on a Container/Virtual Machine. Run the app on a node server by writing the <span>ng serve</span> command in your terminal. 
+</p>
+<p>
+  Finally, navigate to <span>http://localhost:4200/</span>, the application will automatically open in your browser.
+</p>
+<p>
+  You will need to register an account with <a href="https://www.weatherapi.com/">Weather API</a> to make use of their API.
+</p>
+<p>
+  Navigate to the <span>src/environments</span> directory and open the <span>environment.example.ts</span> file to see which variable keys are rrequired to communicate with the weather APIs service.
+</p>
+<p>
+  Next you should create a file <span>environment.development.ts</span> inside the <span>src/environments/</span>  directory can paste your keys as shown below:
+</p>
+  
+
+<div class="code">
+  <div>
+    WEATHER_API_BASE_URL: '',
+  </div>
+  <div>
+    X_RAPIDAPI_HOST_LABEL: '',
+  </div>
+  <div>
+    X_RAPIDAPI_HOST_VALUE: '',
+  </div>
+  <div>
+    X_RAPIDAPI_KEY_LABEL: '',
+  </div>
+  <div>
+    X_RAPIDAPI_KEY_VALUE: '',
+  </div>
+  <div>
+    WEATHER_API_CITY_SEARCH_URL: ''
+  </div>
+</div>
+
+<p>
+  Two main endpoints are used in this project, the <span>Forecast Weather API</span> and <span>Search/Autocomplete API</span> <a href="https://rapidapi.com/weatherapi/api/weatherapi-com/">endpoints</a>. They should be copied along with http headers variables shown aboove. 
+</p>
+  
+
+
+<h3 id="#features">Acknowledgments</h3>
+
+PocketWeather is made possible thanks to all the hard work the being done by lots of people. I will like to give special thanks to the contributors behind Weather API service.
+
+<h3 id="#further-help">Further help</h3>
+<p>
+  To get more help on the Angular CLI use <span>ng help</span>  or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page. 
+</p>
+<p>
+  If there is any specific request you will like to direct to me personally, feel free to say hi to me on <a href="https://twitter.com/degivenchy">Twitter</a>
+</p>
+</div>

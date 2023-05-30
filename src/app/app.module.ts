@@ -11,6 +11,7 @@ import { WeatherChartComponent } from './components/weather-chart/weather-chart.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClickedOutsideDirective } from './directives/clicked-outside.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NavbarComponent,
     ClickedOutsideDirective,
     PageNotFoundComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

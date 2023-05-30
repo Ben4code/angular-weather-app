@@ -1,0 +1,47 @@
+.about{
+  padding: 5rem 3rem;
+  border-radius: 2rem;
+  height: auto;
+  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  box-shadow: 1rem 1rem 1rem  rgba(0, 0, 0, 0.5);
+}
+h1{
+  margin-bottom: 2rem;
+}
+h3{
+  margin: 4rem 0 0;
+}
+p{
+  margin: 2rem 0;
+}
+a,
+a:link{
+  color: rgb(224, 121, 3);
+
+}
+
+li{
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+ol{
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+span {
+  background: rgba(50, 50, 50, .9);
+  padding: .1rem 1rem;
+  border-radius: 2rem;
+}
+
+.code{
+  background: rgba(50, 50, 50, .9);
+  padding: 2rem;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 2rem;
+}

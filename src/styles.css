@@ -33,14 +33,16 @@ body {
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   font-size: 1.6rem;/* 16px */
   width: 100%;
-  min-height: 100vh;
+  min-height: 135vh;
   background: rgb(2,0,36);
   background: linear-gradient(45deg, var(--container-bg) 0%, var(--container-bg-dark) 55%, var(--gray) 100%);
+  background-repeat: no-repeat;
   color: #fff;
 }
 .container{
   margin: 3rem auto;
-  width: 90rem;
+  max-width: 90rem;
+  min-height: 90vh;
   height: 90vh;
   border-radius: var(--border-radius);
   background: rgb(2,0,36);
@@ -219,6 +221,7 @@ a:visited{
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .home__panel-list{
   height: 100%;
@@ -296,4 +299,119 @@ a:visited{
   100%{ 
     height: 15rem;
   }
+}
+
+@media only screen and (max-width: 900px) {
+  html{
+    font-size: 55%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  html{
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  html{
+    font-size: 45%;
+  }
+  .container{
+    max-width: 70rem;
+    min-height: 90vh;
+    height: 90vh;
+  }
+
+  .home__city{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0rem;
+  }
+  
+  .home__upper-content{
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    position: absolute;
+    display: inline-block;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .home__form input{
+    font-size: 1.6rem;
+    width: 27rem;
+  }
+  .home__search-result{
+    right: 4rem;
+    width: 27rem;
+    height: 15rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .container{
+    margin-inline: 5rem;
+    height: auto;
+    font-size: 2rem;
+  }
+  .home__upper{
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+  .home__upper-content{
+    padding: 6rem 4rem;
+    left: 50%;    
+    top: 25%;
+  }
+  .home__upper-left{
+    width: 100%;
+    display: block;
+    height: 50rem; 
+  }
+  .home__upper-right{
+    display: block;
+    width: 100%;
+    padding: 5rem 0;
+    height: 50rem;
+  }
+  
+  .home__upper-list{
+    row-gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .home__form input{
+    font-size: 2rem;
+    width: 40rem;
+  }
+  .home__search-result{
+    right: 6rem;
+    width: 40rem;
+    top: 62rem;
+  }
+
+  .home__lower{
+    height: auto;
+  }
+  .home__panel-list{
+    flex-direction: column;
+    padding: 5rem 0;
+    gap: 3rem;
+  }
+  .home__lower-panel{    
+    padding: 2rem 1rem;
+    width: 45rem;
+    height: 35rem;
+  }
+
+  .home__lower-date{
+    
+    font-size: 1.9rem;
+    
+    margin: 2rem 0;
+  }
+  .home__lower-icon{
+    margin: 2rem 0;
+  }
+    
 }

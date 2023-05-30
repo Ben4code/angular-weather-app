@@ -24,7 +24,7 @@
           <span>Wind Speed: {{ weatherData.current.wind_kph }}km/h</span></li>
         <li>
           <img src="assets/wind.svg" width="40" alt="Humidity" /> 
-          <span>Pressure: {{ weatherData.current.pressure_mb }}</span>
+          <span>Pressure: {{ weatherData.current.pressure_mb }}mb</span>
         </li>
       </ul>
       <button class="home__button" [routerLink]="['/detail', currentCity, 0]">More</button>

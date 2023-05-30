@@ -1,5 +1,5 @@
 .navbar{
-  width: 90rem;
+  max-width: 90rem;
   height: 7vh;
   margin: 2rem auto;
 }
@@ -19,4 +19,10 @@
 .navbar-link-item{
   display: flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 520px) {
+  .navbar{
+    width: 50rem;
+  }
 }
