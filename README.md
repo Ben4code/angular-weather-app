@@ -1,5 +1,5 @@
 # PocketWeather
-####  A Mini Weather App Project build with [Angular16](https://angular.io) and [Weather API](https://www.weatherapi.com/)
+####  A Mini [Weather App](pocketweather.vercel.app) Project build with [Angular16](https://angular.io) and [Weather API](https://www.weatherapi.com/)
 ![AnguWeatherApp](https://user-images.githubusercontent.com/27999631/241835739-c079e399-13d6-4b75-89ac-dac324117799.png)
 
 ## Table of contents
@@ -17,7 +17,7 @@ This project was developed to help you get weather updates from different cities
 
 ## Features
 
-This project comes with all the standard Angular 16 dependencies out of the box. It is a monolith application currently deployed and hosted on [Firebase](https://firebase.google.com/). It was also developed from scratch using modern web application best practices like:
+This project comes with all the standard Angular 16 dependencies out of the box. It is a monolith application currently [deployed](pocketweather.vercel.app) and hosted on [Vercel](https://Vercel.com/). It was also developed from scratch using modern web application best practices like:
  1. Debouncing of high traffic search API calls. 
  2. Loading state to ensure app initialises correctly.
  3. Persistence of last searched city on Local Storage in-browser application memory.
@@ -30,7 +30,7 @@ Ensure you have [Nodejs](https://nodejs.org/) installed locally or on a Containe
 Finally, navigate to `http://localhost:4200/`, the application will automatically open in your browser.
 You will need to register an account with [Weather API](https://www.weatherapi.com/) to make use of their API.
 Navigate to the `src/environments` directory and open the `environment.example.ts` file to see which variable keys are rrequired to communicate with the weather APIs service.
-Next you should create a file `environment.development.ts` inside the `src/environments/` directory can paste your keys like so:
+Next you should create a file `environment.development.ts` inside the `src/environments/` directory can paste your keys as shown below:
 
 
 ```
