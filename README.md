@@ -1,5 +1,5 @@
 # PocketWeather
-####  A Mini [Weather App](pocketweather.vercel.app) Project build with [Angular16](https://angular.io) and [Weather API](https://www.weatherapi.com/)
+####  A Mini [Weather App](https://pocketweather.vercel.app) Project build with [Angular16](https://angular.io) and [Weather API](https://www.weatherapi.com/)
 ![AnguWeatherApp](https://user-images.githubusercontent.com/27999631/241835739-c079e399-13d6-4b75-89ac-dac324117799.png)
 
 ## Table of contents
