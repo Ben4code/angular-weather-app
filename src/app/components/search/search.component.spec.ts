@@ -40,35 +40,6 @@ describe('SearchComponent', () => {
     expect(component).toBeTruthy();
   });
   
-  it('should call getCity on init', async () => {
-    // expect(component.cities.length).toEqual(0)
-    // component.subject.subscribe(selectedPost => {
-    //   console.log(selectedPost)  
-    // }) 
-
-    // console.log('first: ', component.subject)
-    // expect(component.cities.length).toEqual(0)
-    
-    // const service = fixture.debugElement.injector.get(weatherService)
-    // fixture.detectChanges();
-    // component.ngOnInit()
-    
-    
-    // weatherService.getCity('Toronto').subscribe(response => {
-    //   console.log(response)
-    //   component.ngOnInit()
-    //   console.log(component.cities)
-    //   fixture.detectChanges();
-    //   // expect(component.cities.length).toBeGreaterThan(0)
-
-    // })
-    const quoteService = fixture.debugElement.injector.get(WeatherService);
-    fixture.detectChanges();
-    quoteService.getCity('Toronto').subscribe(response => {
-      console.log(response)
-    })
-  });
-  
   it('should search', () => {
     const query = 'Paris'
     component.textInputField = query

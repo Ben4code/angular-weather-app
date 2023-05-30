@@ -1,7 +1,11 @@
-h4{
+.pageNotFound{
   display: grid;
   place-content: center;
   color: white;
   height: 80vh;
   font-size: 3rem;
+  text-align: center;
+}
+.pageNotFound a {
+  color: aqua;
 }
