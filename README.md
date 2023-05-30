@@ -25,9 +25,11 @@ This project comes with all the standard Angular 16 dependencies out of the box.
 
 ## Getting Started
 
-Ensure you have [Nodejs](https://nodejs.org/) installed locally or on a Container/VM to Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically and open in your browser.
-You will need to register an account with [Weather API](https://www.weatherapi.com/) to get make use of their API.
-Navigate to the `src/environments` directory see which variable keys are needed to communicate with the weather APIs.
+Ensure you have [Nodejs](https://nodejs.org/) installed locally or on a Container/Virtual Machine. Run the app on a node server by writing the
+ `ng serve` command in your terminal. 
+Finally, navigate to `http://localhost:4200/`, the application will automatically open in your browser.
+You will need to register an account with [Weather API](https://www.weatherapi.com/) to make use of their API.
+Navigate to the `src/environments` directory and open the `environment.example.ts` file to see which variable keys are rrequired to communicate with the weather APIs service.
 Next you should create a file `environment.development.ts` inside the `src/environments/` directory can paste your keys like so:
 
 
@@ -45,8 +47,9 @@ Two main endpoints are used in this project, the `Forecast Weather API` and `Sea
 
 ## Acknowledgments
 
-PocketWeather is made possible thanks to all the hard work the good people at various open source teams are doing. I will like to give special thanks to contributor behind Weather API.
+PocketWeather is made possible thanks to all the hard work the being done by lots of people. I will like to give special thanks to the contributors behind Weather API service.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. If there is any specific request you will like to direct to me personally, feel free to say hi to me on [Twitter](https://twitter.com/degivenchy) 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. 
+If there is any specific request you will like to direct to me personally, feel free to say hi to me on [Twitter](https://twitter.com/degivenchy) 
