@@ -1,18 +1,20 @@
-<form class="home__form">
-  <input
+<div class="search">
+  <form class="home__form">
+    <input
     [value]="textInputField"
-    type="text" 
+    type="text"
     placeholder="Search City" 
     name="search" 
     appClickedOutside
     (keyup)="handleKeyUp($event)"
     (focus)="handleFocus()"
     (clickedOutside)="handleClickedOutside()"
-  >
-</form>
-
-<div class="home__search-result" *ngIf="showResultsDorpDown">
-  <ul>
-    <li *ngFor="let city of cities" (click)="handleCity(city.name)"> {{ city.name }} </li>
-  </ul>
+    >
+  </form>
+  
+  <div class="home__search-result" *ngIf="showResultsDorpDown">
+    <ul>
+      <li *ngFor="let city of cities" (click)="handleCity(city.name)"> {{ city.name }} </li>
+    </ul>
+  </div>
 </div>

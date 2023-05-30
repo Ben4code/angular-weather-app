@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 
 import { City } from 'src/app/models/weather-service.model';
+import { LocalStorageService } from 'src/app/services/localStorage.service';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -16,7 +17,10 @@ export class SearchComponent implements OnInit {
   cities: Array<City> = [];
   @Output() selectedCityEvent = new EventEmitter<string>()
 
-  constructor(private weatherService: WeatherService){}
+  constructor(
+    private weatherService: WeatherService,
+    private localStorageService: LocalStorageService
+  ){}
   
   ngOnInit(): void {
     this.subject.pipe(
@@ -46,7 +50,7 @@ export class SearchComponent implements OnInit {
     this.selectedCityEvent.emit(city)
     this.textInputField = ''
     this.cities = []
-    this.weatherService.saveCity('city', city)
+    this.localStorageService.saveCity('city', city)
   }
 
   handleFocus(){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RootWeatherData } from 'src/app/models/weather-service.model';
 import { WeatherService } from 'src/app/services/weather.service';
+import { LocalStorageService } from './services/localStorage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,15 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angularweather';
-  constructor(private weatherService: WeatherService){}
+  constructor(
+    private weatherService: WeatherService,
+    private localStorageService: LocalStorageService
+  ){}
   weatherData!: RootWeatherData;
   
   
   ngOnInit(){
-    const city = this.weatherService.getSavedCity('city');
+    const city = this.localStorageService.getSavedCity('city');
     this.weatherService.getWeather(city)
       .subscribe({
         next: (response) => {

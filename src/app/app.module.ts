@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClickedOutsideDirective } from './directives/clicked-outside.directive';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ClickedOutsideDirective } from './directives/clicked-outside.directive'
     WeatherChartComponent,
     NavbarComponent,
     ClickedOutsideDirective,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
